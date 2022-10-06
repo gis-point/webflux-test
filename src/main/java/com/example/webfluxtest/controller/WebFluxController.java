@@ -25,8 +25,8 @@ public class WebFluxController {
     private final MessageService messageService;
 
     @PostMapping("/message")
-    public DeferredResult<ResponseEntity> sendMessage(@RequestBody RequestBodyDto message) {
-        DeferredResult<ResponseEntity> response = new DeferredResult<>();
+    public DeferredResult<ResponseEntity<Integer>> sendMessage(@RequestBody RequestBodyDto message) {
+        DeferredResult<ResponseEntity<Integer>> response = new DeferredResult<>();
         log.info("Calling handleMessage with message {} ", message);
         return response;
     }
