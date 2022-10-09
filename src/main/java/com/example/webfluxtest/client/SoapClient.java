@@ -30,7 +30,7 @@ public class SoapClient {
                         .flatMap(errorResponseBody ->
                                 Mono.error(new ResponseStatusException(clientResponse.statusCode(), errorResponseBody))))
                 .bodyToMono(Resultcode.class)
-                .flatMap(response -> Mono.just(response.getValue()))
+                .map(Resultcode::getValue)
                 .doOnError(Exception.class, error -> log.error("Error during client call: " + error));
     }
 
