@@ -1,7 +1,10 @@
 package com.example.webfluxtest.service;
 
+import com.example.webfluxtest.controller.dto.RequestBodyDto;
+import reactor.core.publisher.Mono;
+
 public interface MessageService {
 
-    int processMessage(String message);
+    Mono<Integer> processMessage(RequestBodyDto message);
 
 }
