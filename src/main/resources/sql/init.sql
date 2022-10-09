@@ -1,0 +1,1 @@
+CREATE TABLE MESSAGE (id SERIAL PRIMARY KEY, message_id INT, messages VARCHAR(255));
